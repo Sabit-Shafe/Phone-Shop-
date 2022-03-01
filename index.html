@@ -11,16 +11,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- header  -->
     <header>
         <h1 class="text-success text-center my-5 ">Click & Collect Shop </h1>
     </header>
+    <!-- main section  -->
     <section>
+        <!-- search option  -->
         <div class="input-group mb-3 w-50 mx-auto">
             <input  id="search-Field" type="text" class="form-control" placeholder="Phone Search" aria-label="Phone Search" aria-describedby="button-addon2">
+            <!-- search buttton  -->
             <button onclick="phoneSearch()" class="btn btn-outline-secondary " type="button" id="searchButton">Search</button>
           </div>
+          <!-- details card  -->
         <div id="details" class="w-50 h-50 mx-auto rounded">
         </div>
+        <!-- phone card when search -->
         <div id="searchResult" class="row row-cols-1 row-cols-md-3 g-4 container mx-auto rounded ">
         </div>
 

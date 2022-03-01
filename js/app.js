@@ -1,9 +1,10 @@
+// arrow function for search 
 const phoneSearch = () => {
-    document.getElementById("searchResult").innerHTML= "";
+    document.getElementById("searchResult").innerHTML= "";   //replce new search item from prev
     const searchField = document.getElementById('search-Field');
-    const searchText = searchField.value;
-    searchField.value = '';
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+    const searchText = searchField.value;  // get value in search box
+    searchField.value = '';  // search text remove
+    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`; //api url
 
     fetch (url)
     .then(res =>res.json())
@@ -13,10 +14,10 @@ const phoneSearch = () => {
 
 const displaySearchResult = (phones) => {
     const searchResult = document.getElementById('searchResult');
-    const maxItem = phones.slice(0, 20);
+    const maxItem = phones.slice(0, 20); // slice 20 items
     for (const phone of maxItem ) {
         // console.log(data);
-
+        // dynamic ui 
         const div = document.createElement('div');
         div.classList.add ('col');
         div.innerHTML = `
@@ -31,10 +32,10 @@ const displaySearchResult = (phones) => {
         searchResult.appendChild(div);
     }
 };
-
+// button details function 
 const details = slug => {
     document.getElementById('details').innerHTML = "";
-    const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
+    const url = `https://openapi.programming-hero.com/api/phone/${slug}`; // api url
     fetch (url)
     .then(res =>res.json())
     .then(data => setDetails(data.data));
