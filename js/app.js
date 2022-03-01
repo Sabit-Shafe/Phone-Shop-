@@ -25,7 +25,7 @@ const displaySearchResult = (phones) => {
                 <div class="card-body">
                   <h5 class=" text-center text-info card-title">${phone.phone_name}</h5>
                   <h4 class="text-success"> ${phone.brand}</h4>
-                  <button onclick="details('${phone.slug}')" class="btn btn-success">Details</button>
+                  <button onclick="details('${phone.slug}')" class="btn bg-success text-white bg-gradient">Details</button>
               </div>
         `;
         searchResult.appendChild(div);
