@@ -13,18 +13,19 @@ const phoneSearch = () => {
 
 const displaySearchResult = (phones) => {
     const searchResult = document.getElementById('searchResult');
-    for (const data of phones ) {
+    const maxItem = phones.slice(0, 20);
+    for (const phone of maxItem ) {
         // console.log(data);
 
         const div = document.createElement('div');
         div.classList.add ('col');
         div.innerHTML = `
         <div class="card bg-transparent">
-                <img src="${data.image}" class="card-img-top w-50 h-50 mx-auto mt-3" alt="...">
+                <img src="${phone.image}" class="card-img-top w-50 h-50 mx-auto mt-3" alt="...">
                 <div class="card-body">
-                  <h5 class=" text-center text-info card-title">${data.phone_name}</h5>
-                  <h4 class="text-success"> ${data.brand}</h4>
-                  <button onclick="details('${data.slug}')" class="btn btn-success">Details</button>
+                  <h5 class=" text-center text-info card-title">${phone.phone_name}</h5>
+                  <h4 class="text-success"> ${phone.brand}</h4>
+                  <button onclick="details('${phone.slug}')" class="btn btn-success">Details</button>
               </div>
         `;
         searchResult.appendChild(div);
@@ -41,6 +42,7 @@ const details = slug => {
 
 const setDetails = (allInfo) =>{
     const detailsResult = document.getElementById('details')
+    // detailsResult = "";
     const div = document.createElement('div');
         div.classList.add ('col');
         div.innerHTML = `
